@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <Button class="mx-auto mt-40" label="Voir tout" variant="tertiary" />
+                <Button class="mx-auto mt-40" label="Voir tout" link="/" variant="tertiary" />
             </div>
         </div>
         <img class="absolute left-0 bottom-0 w-full pointer-events-none" src="/images/separator-bottom-blue.svg" alt=""
