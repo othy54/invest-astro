@@ -45,6 +45,22 @@ const data = await wpquery({
 						}
 						homepagePositionTitle
       					homepagePositionText
+						homepagePositionMissions {
+							homepagePositionMissionsTitle
+							homepagePositionMissionsLink {
+								url
+							}
+							homepagePositionMissionsIcon {
+								node {
+									sourceUrl
+								}
+							}
+						}
+						homepagePositionImage {
+							node {
+								sourceUrl
+							}
+						}
 					}
 				}
 			}
@@ -62,6 +78,11 @@ const homepageData = data.page.templateHomepage;
 			rel="preload"
 			as="image"
 			href={homepageData.homepageHeroImage.node.sourceUrl}
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="/images/reflections-hero-home.svg"
 		/>
 		<link
 			rel="preload"
@@ -100,6 +121,7 @@ const homepageData = data.page.templateHomepage;
 					</div>
 					<img
 						class="absolute left-0 top-0 w-full h-full z-3"
+						fetchpriority="high"
 						src="/images/reflections-hero-home.svg"
 						alt="ouvrier"
 						width="948"
@@ -225,44 +247,97 @@ const homepageData = data.page.templateHomepage;
 			text={homepageData.homepagePositionText}
 		/>
 
-		<!-- @php
-
-    $missions = get_field('homepage__position-missions');
-
-    @endphp
-
-    <div class="row relative">
-      <div class="padding-container">
-        <div class="flex flex-col lg:flex-row ">
-          <div class="w-full flex-1 flex items-center order-2 lg:order-1 mt-[64px] lg:mt-0">
-            <ul class="section-geographical-position__mission-list lg:pl-10">
-              @foreach ($missions as $mission)
-              
-                <li class="section-geographical-position__mission text-grayscale-0 border-b-[1px] border-grayscale-0/24 last:border-b-0">
-                  <a class="block flex justify-between items-center space-x-10" href="{{ $mission['homepage__position-missions-link']['url'] }}">
-                    <div class="flex items-center space-x-6 lg:space-x-10">
-                      <img class="section-geographical-position__icon" src="{{ $mission['homepage__position-missions-icon']['url'] }}" alt="icone" width="72" height="72" loading="lazy"> <span class="font-medium">{{ $mission['homepage__position-missions-title'] }}</span>
-                    </div>
-                    <img class="section-geographical-position__arrow justify-self-end" src="@asset('images/arrow-right.svg')" alt="" width="40" height="40" loading="lazy">
-                  </a>
-                </li>
-              
-              @endforeach
-            </ul>
-          </div>
-          <div class="flex-1 order-1 lg:order-2">
-            <div class="relative">
-              <div class="section-geographical-position__image-wrapper relative">
-                <img class="section-geographical-position__image absolute w-full h-full left-0 top-0 object-cover" src="{{ get_field('homepage__position-image')['url'] }}" width="792" height="880" alt="position statégique" loading="lazy">
-                <div class="section-geographical-position__filter-border absolute w-full h-full top-0 left-0 backdrop-blur-xs"></div>
-                <div class="section-geographical-position__filter-border-2 absolute w-full h-full top-0 left-0 mix-blend-hard-light"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <img class="absolute w-full bottom-0 left-0 pointer-events-none" src="@asset('images/separator-bottom.svg')" alt="" width="1920" height="64" loading="lazy"> -->
+		<div class="row relative">
+			<div class="container">
+				<div class="flex flex-col lg:flex-row">
+					<div
+						class="w-full flex-1 flex items-center order-2 lg:order-1 mt-[64px] lg:mt-0"
+					>
+						<ul
+							class="section-geographical-position__mission-list lg:pl-10"
+						>
+							{
+								homepageData.homepagePositionMissions.map(
+									(mission: any) => (
+										<li class="section-geographical-position__mission text-grayscale-0 border-b-[1px] border-grayscale-0/24 last:border-b-0">
+											<a
+												class="flex justify-between items-center space-x-10"
+												href={
+													mission
+														.homepagePositionMissionsLink
+														.url
+												}
+											>
+												<div class="flex items-center space-x-6 lg:space-x-10">
+													<img
+														class="section-geographical-position__icon"
+														src={
+															mission
+																.homepagePositionMissionsIcon
+																.node.sourceUrl
+														}
+														alt="icone"
+														width="72"
+														height="72"
+														loading="lazy"
+													/>{" "}
+													<span class="font-medium">
+														{
+															mission.homepagePositionMissionsTitle
+														}
+													</span>
+												</div>
+												<img
+													class="section-geographical-position__arrow justify-self-end"
+													src="/images/arrow-right.svg"
+													alt=""
+													width="40"
+													height="40"
+													loading="lazy"
+												/>
+											</a>
+										</li>
+									),
+								)
+							}
+						</ul>
+					</div>
+					<div class="flex-1 order-1 lg:order-2">
+						<div class="relative">
+							<div
+								class="section-geographical-position__image-wrapper relative"
+							>
+								<img
+									class="section-geographical-position__image absolute w-full h-full left-0 top-0 object-cover"
+									src={homepageData.homepagePositionImage.node
+										.sourceUrl}
+									width="792"
+									height="880"
+									alt="position statégique"
+									loading="lazy"
+								/>
+								<div
+									class="section-geographical-position__filter-border absolute w-full h-full top-0 left-0 backdrop-blur-xs"
+								>
+								</div>
+								<div
+									class="section-geographical-position__filter-border-2 absolute w-full h-full top-0 left-0 mix-blend-hard-light"
+								>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<img
+			class="absolute w-full bottom-0 left-0 pointer-events-none"
+			src="/images/separator-bottom.svg"
+			alt=""
+			width="1920"
+			height="64"
+			loading="lazy"
+		/>
 	</section>
 </Layout>
 <style lang="scss">
