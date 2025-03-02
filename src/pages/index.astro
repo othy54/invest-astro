@@ -4,6 +4,8 @@ import { wpquery } from "@api/wpquery";
 import Button from "@components/Button.astro";
 import NewsHome from "@components/NewsHome.vue";
 import GeographicalStrategy from "@components/GeographicalStrategy.vue";
+import { Image } from "astro:assets";
+import thumbnailVideo from "@assets/images/video-thumbnail-home.png";
 
 const data = await wpquery({
 	query: `
@@ -219,13 +221,10 @@ const homepageData = data.page.templateHomepage;
 							</Button>
 						</div>
 						<div class="relative lg:w-1/2 mt-10">
-							<img
+							<Image
 								class="lg:absolute right-0 lg:-translate-x-1/3 lg:-translate-y-1/2 top-1/2 rotate-[4deg] md:w-[80%] lg:w-full"
-								src="/images/video-thumbnail-home.png"
+								src={thumbnailVideo}
 								alt="video magazine"
-								width="390"
-								height="390"
-								loading="lazy"
 							/>
 							<img
 								class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-[1.1] transition-transform duration-300 easing-[var(--cubic)] cursor-pointer"
