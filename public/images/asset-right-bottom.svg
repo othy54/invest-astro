@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="436.5" height="260.162" viewBox="0 0 436.5 260.162">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.029" y1="0.048" x2="0.769" y2="0.929" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#faebd3"/>
+      <stop offset="1" stop-color="#faebd3" stop-opacity="0.322"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.013" y1="0.201" x2="0.976" y2="0" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Groupe_167" data-name="Groupe 167" transform="translate(-1368 -2747.014)">
+    <g id="Groupe_169" data-name="Groupe 169">
+      <path id="Tracé_243" data-name="Tracé 243" d="M-19009.121-18496.771l-96.7-209.914,412.5,73.908Z" transform="translate(20485.816 21491.947)" fill="#ec6423"/>
+      <path id="Tracé_257" data-name="Tracé 257" d="M-18960.816-18618.947l-145-87.738,412.5,73.908Z" transform="translate(20485.816 21491.947)" opacity="0.8" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+      <path id="Tracé_256" data-name="Tracé 256" d="M-19009.121-18496.771l-96.7-209.914,145,87.738Z" transform="translate(20485.816 21491.947)" opacity="0.8" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    </g>
+    <g id="Groupe_164" data-name="Groupe 164" transform="translate(1073 364.158)">
+      <path id="Tracé_250" data-name="Tracé 250" d="M-20415.346-19994.346l-14.238-28.232,59.834-3.914Z" transform="translate(20866.75 22409.348)" fill="#ec6423"/>
+      <path id="Tracé_251" data-name="Tracé 251" d="M-20415.346-19994.346l-14.238-28.232,18.713,16.561Z" transform="translate(20866.75 22409.348)" opacity="0.8" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+      <path id="Tracé_252" data-name="Tracé 252" d="M-20429.58-20022.582l59.83-3.908-41.121,20.473Z" transform="translate(20866.75 22409.348)" opacity="0.8" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    </g>
+  </g>
+</svg>

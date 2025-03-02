@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="374" height="284.005" viewBox="0 0 374 284.005">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.46" y1="0.154" x2="0.442" y2="0.851" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0" y1="0.716" x2="1.048" y2="-0.036" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.906" y1="1.217" x2="0.725" y2="0.37" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="reflections" transform="translate(0 -105.141)" opacity="0.64">
+    <path id="Path_219" data-name="Path 219" d="M1916.238,1083.9l-298.777-25.168-16.039,16.678,320,26Z" transform="translate(-1601.422 -712.268)" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    <path id="Path_220" data-name="Path 220" d="M2487.781,574.855V554.014L2428.6,597.553l5.184,17.5Z" transform="translate(-2113.781 -225.907)" opacity="0.64" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    <path id="Path_221" data-name="Path 221" d="M1975.422,185.049h-374v258l16.045-16.676,298.789,25.174,59.166-43.682Z" transform="translate(-1601.422 -79.908)" fill="url(#linear-gradient-3)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+  </g>
+</svg>

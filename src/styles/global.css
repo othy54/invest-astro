@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@utility container {
+    margin-inline: auto;
+    max-width: 100rem;
+    padding-inline: 16px;
+}
+
+@theme {
+     /* MAIN COLORS */
+
+  --color-grayscale-0: #FFFFFF;
+  --color-grayscale-50: #F8FAFC;
+  --color-grayscale-100: #F1F5F9;
+  --color-grayscale-200: #E2E8F0;
+  --color-grayscale-300: #CBD5E1;
+  --color-grayscale-400: #94A3B8;
+  --color-grayscale-500: #64748B;
+  --color-grayscale-600: #475569;
+  --color-grayscale-700: #334155;
+  --color-grayscale-800: #1E293B;
+  --color-grayscale-900: #0F172A;
+  --color-grayscale-950: #030712;
+
+  --color-dark-blue-50: #F4FAFF;
+  --color-dark-blue-100: #EAF3FA;
+  --color-dark-blue-200: #D7E9F8;
+  --color-dark-blue-300: #ABCAEA;
+  --color-dark-blue-400: #75A4E6;
+  --color-dark-blue-500: #5174C9;
+  --color-dark-blue-600: #2E509F;
+  --color-dark-blue-700: #143471;
+  --color-dark-blue-800: #082960;
+  --color-dark-blue-900: #001E50;
+  --color-dark-blue-950: #001231;
+
+  --color-cyan-50: #EEFCFD;
+  --color-cyan-100: #D3F5FA;
+  --color-cyan-200: #ACE8F5;
+  --color-cyan-300: #73D7ED;
+  --color-cyan-400: #52C6E2;
+  --color-cyan-500: #179FC3;
+  --color-cyan-600: #167FA4;
+  --color-cyan-700: #196785;
+  --color-cyan-800: #1D556D;
+  --color-cyan-900: #1C475D;
+  --color-cyan-950: #0D2E3F;
+
+  /* SERVICE COLORS */
+
+  --color-meeting-300: #F4B0DB;
+  --color-meeting-400: #ED61B7;
+  --color-meeting-500: #E01B7E;
+  --color-meeting-700: #B00453;
+  --color-meeting-800: #920948;
+
+  --color-invest-300: #F7BE7A;
+  --color-invest-400: #F4792C;
+  --color-invest-500: #EC6423;
+  --color-invest-700: #BA4B14;
+  --color-invest-800: #943B18;
+
+  --color-tourism-300: #F5B07C;
+  --color-tourism-400: #EF7C39;
+  --color-tourism-500: #EC6423;
+  --color-tourism-700: #B83816;
+  --color-tourism-800: #922E1A;
+
+  --cubic: cubic-bezier(0.600, 0.000, 0.200, 1.000);
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/Poppins-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+html {
+  font-family: Poppins, sans-serif;
+
+  font-size: calc(16px + 16*((100vw - 390px) / 704));
+  -webkit-font-smoothing: antialiased;
+
+  @media screen and (min-width: 768px) {
+    font-size: calc(16px + 16*((100vw - 768px) / 256));
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: calc(8px + 8*((100vw - 961px) / 961));
+  }
+}

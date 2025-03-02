@@ -1,0 +1,477 @@
+---
+import { wpquery } from "@api/wpquery";
+import type { menuItem, mainMenu } from "@types-invest/menu";
+
+const data = await wpquery({
+    query: `query GET_MENU_BY_NAME {
+                menu(id: "menu-principal", idType: NAME) {
+                    menuItems(first:100) {
+                        nodes {
+                            databaseId
+                            uri
+                            label
+                            parentDatabaseId
+                        }
+                    }
+                }
+            }`,
+});
+
+const menuItems: menuItem[] = data.menu.menuItems.nodes;
+const mainMenu: mainMenu[] = new Array();
+
+menuItems.forEach((it) => {
+    if (!it.parentDatabaseId) {
+        mainMenu.push({
+            id: it.databaseId,
+            url: it.uri,
+            label: it.label,
+            //@ts-ignore
+            children: [],
+        });
+    } else {
+        mainMenu.forEach((item) => {
+            if (it.parentDatabaseId === item.id) {
+                item.children.push({
+                    label: it.label,
+                    url: it.uri,
+                });
+            }
+        });
+    }
+});
+
+const socials = [
+    {
+        icon: "social-facebook",
+        link: "https://www.facebook.com/InspireMetz",
+    },
+    {
+        icon: "social-linkedin",
+        link: "https://fr.linkedin.com/company/inspire-metz",
+    },
+    {
+        icon: "social-x",
+        link: "https://x.com/inspire_metz",
+    },
+];
+---
+
+<header class="section-header fixed w-full z-20">
+    <div
+        class="banner bg-dark-blue-950 py-[0.68rem] overflow-clip lg:overflow-visible"
+    >
+        <div class="container flex justify-between items-center">
+            <div>
+                <ul class="flex space-x-4">
+                    {
+                        socials.map((social) => (
+                            <li>
+                                <a
+                                    href={social.link}
+                                    target="_blank"
+                                    aria-label="Réseau Social"
+                                >
+                                    <img
+                                        src={"images/" + social.icon + ".svg"}
+                                        alt="logo facebook"
+                                        width="24"
+                                        height="24"
+                                    />
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-[13px] text-grayscale-0 hidden md:block">
+                    Découvrez le portail
+                </div>
+                <div class="my-[-20px]">
+                    <img
+                        src="./images/logo-inspire-white.svg"
+                        alt="logo inspire metz"
+                        width="90"
+                        height="64"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU -->
+
+    <div
+        class="menu py-[11px] relative before:bg-linear-to-b before:from-invest-300/32 before:to-invest-300/0 before:absolute before:h-0 before:w-full before:top-0 before:z-2 before:transition-[height] before:duration-300"
+    >
+        <div class="flex container justify-between items-center">
+            <div class="relative z-2">
+                <a href="/">
+                    <img
+                        class="section-header__logo max-w-[6.625rem] lg:max-w-[9.43rem]"
+                        src="/images/logo-invest-color.svg"
+                        alt="logo inspire metz"
+                        width="152"
+                        height="80"
+                    />
+                </a>
+            </div>
+            <div class="flex gap-6 items-center">
+                <ul
+                    class="section-header__items lg:flex space-x-8 items-center font-medium lg:font-semibold text-dark-blue-950 absolute lg:static left-0 top-0 h-[100dvh] lg:h-[unset] w-full bg-white lg:bg-transparent pt-28 lg:pt-0 space-y-5 lg:space-y-0 px-6 lg:px-0"
+                >
+                    {
+                        mainMenu.map((item) => (
+                            <li class="section-header__item relative z-3">
+                                <div class="section-header__item-label cursor-pointer lg:max-w-[12rem]">
+                                    <span>{item.label}</span>
+                                    <img
+                                        class="section-header__chevron"
+                                        src="/images/chevron-right.svg"
+                                        alt=""
+                                        width="28"
+                                        height="28"
+                                    />
+                                </div>
+                                <div class="section-header__wrapper-submenu">
+                                    <ul class="section-header__submenu">
+                                        {item.children.map((it: any) => (
+                                            <li>
+                                                <a href={it.url}>{it.label}</a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </li>
+                        ))
+                    }
+                    <li class="">
+                        <a
+                            class="section-header__btn-project relative z-2 items-center gap-[6px] border-[1px] border-dark-blue-950/24 rounded-[60px] hidden lg:flex"
+                            href="/contact"
+                        >
+                            <span>Vous avez un projet</span>
+                            <img
+                                class="rotate-90"
+                                src="/images/chevron-right.svg"
+                                alt=""
+                                width="17"
+                                height="17"
+                            />
+                        </a>
+                    </li>
+                    <li
+                        class="font-normal hidden lg:block uppercase relative z-2"
+                    >
+                        Fr
+                    </li>
+                </ul>
+                <div
+                    class="font-normal lg:hidden text-dark-blue-950 relative z-4 uppercase"
+                >
+                    Fr
+                </div>
+                <div class="relative z-2 lg:hidden section-header__burger-menu">
+                    <div
+                        class="section-header__burger-line h-[2px] w-[28px] bg-dark-blue-950 relative"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // HEADER EFFECT
+
+    const header = document.querySelector(".section-header");
+    let oldScroll = 0;
+
+    if (header) {
+        const onScroll = () => {
+            if (oldScroll < window.scrollY && window.scrollY > 150) {
+                header.classList.add("section-header--fixed");
+            } else if (oldScroll > window.scrollY) {
+                header.classList.remove("section-header--fixed");
+            }
+
+            if (window.scrollY > 0) {
+                header.classList.add("section-header--sticked");
+            } else {
+                header.classList.remove("section-header--sticked");
+            }
+
+            oldScroll = window.scrollY;
+        };
+        window.addEventListener("scroll", onScroll);
+    }
+
+    // MENU BURGER
+    const menu = document.querySelector(".menu");
+    const burger = document.querySelector(".section-header__burger-menu");
+
+    burger?.addEventListener("click", () => {
+        menu?.classList.toggle("menu--active");
+    });
+
+    const submenuItems = document.querySelectorAll(".section-header__item");
+    submenuItems?.forEach((item) => {
+        item.addEventListener("click", (e) => {
+            submenuItems.forEach((sub) => {
+                if (item !== sub) {
+                    sub.classList.remove("section-header__item--active");
+                }
+            });
+
+            item.classList.toggle("section-header__item--active");
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        submenuItems.forEach((item) => {
+            if (!item.contains(e.target as Node)) {
+                item.classList.remove("section-header__item--active");
+            }
+        });
+    });
+</script>
+
+<style lang="scss">
+    .section-header {
+        transition:
+            background-color var(--cubic) 0.4s,
+            margin-top var(--cubic) 0.4s,
+            transform var(--cubic) 0.7s;
+
+        & .banner {
+            transition: transform 0.3s;
+        }
+
+        & .menu {
+            transition: padding 0.3s;
+            will-change: padding;
+
+            &::before {
+                content: "";
+                height: 100%;
+            }
+        }
+
+        &__logo {
+            transition: max-width 0.3s;
+
+            @media screen and (min-width: 1024px) {
+                max-width: calc(75px + 75 * ((100vw - 961px) / 961));
+            }
+        }
+
+        &.section-header--sticked {
+            .section-header__logo {
+                @media screen and (min-width: 1024px) {
+                    max-width: calc(60px + 60 * ((100vw - 961px) / 961));
+                }
+            }
+
+            .menu {
+                &::before {
+                    content: "";
+                    height: 0%;
+                }
+            }
+        }
+
+        &.section-header--sticked {
+            background-color: white;
+            box-shadow: 0 1px 2px #00000016;
+            margin-top: -46px;
+
+            & .menu {
+                padding-block: 16px;
+            }
+        }
+
+        &.section-header--fixed {
+            transform: translateY(-100%);
+        }
+
+        /* MENU */
+
+        &__items {
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: calc(-16em / 1000);
+            transition: clip-path var(--cubic) 0.7s;
+            clip-path: inset(0 0 100% 0);
+            overflow: clip;
+
+            & > li {
+                position: relative;
+                width: 100%;
+            }
+
+            @media screen and (min-width: 768px) {
+                font-size: calc(20px + 20 * ((100vw - 768px) / 265));
+                line-height: calc(20px + 20 * ((100vw - 768px) / 265));
+            }
+
+            @media screen and (min-width: 1024px) {
+                overflow: visible;
+                clip-path: unset;
+                font-size: calc(8px + 8 * ((100vw - 961px) / 961));
+                line-height: calc(9px + 9 * ((100vw - 961px) / 961));
+
+                & > li {
+                    width: unset;
+
+                    &:after {
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        &__item-label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        &__chevron {
+            transition: transform var(--cubic) 0.3s;
+
+            @media screen and (min-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &__wrapper-submenu {
+            width: 100%;
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: clip;
+            transition:
+                grid-template-rows var(--cubic) 0.4s,
+                padding-top 0.4s,
+                opacity var(--cubic) 0.4s;
+
+            @media screen and (min-width: 1024px) {
+                padding-top: 10px;
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                overflow: visible;
+                display: block;
+            }
+        }
+
+        &__item--active {
+            & .section-header__wrapper-submenu {
+                padding-top: 10px;
+                grid-template-rows: 1fr;
+                opacity: 1;
+                pointer-events: visible;
+            }
+
+            & .section-header__chevron {
+                transform: rotate(90deg);
+            }
+        }
+
+        &__submenu {
+            background-color: white;
+            min-height: 0;
+
+            & > li {
+                font-size: 18px;
+                letter-spacing: calc(-16em / 1000);
+                font-weight: 400;
+
+                &:not(:last-child) {
+                    padding-bottom: 8px;
+                }
+            }
+
+            @media screen and (min-width: 1024px) {
+                border: 1px solid var(--color-grayscale-200);
+                border-radius: 6px;
+                position: absolute;
+                left: 0;
+                padding: calc(10px + 10 * (100vw - 961px) / 961);
+                width: max-content;
+                transform: translate(calc(-10px + -10 * (100vw - 961px) / 961));
+                min-height: unset;
+
+                & > li {
+                    font-size: calc(7px + 7 * (100vw - 961px) / 961);
+                }
+            }
+        }
+
+        .menu--active {
+            .section-header__items {
+                clip-path: inset(0 0 0% 0);
+            }
+
+            .section-header__burger-line {
+                background-color: transparent;
+
+                &:before {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        &__burger-menu {
+            &:before {
+                background-color: color-mix(
+                    in oklab,
+                    var(--color-dark-blue-950) 16%,
+                    transparent
+                );
+                content: "";
+                width: 44px;
+                aspect-ratio: 1;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(3deg);
+            }
+        }
+
+        &__burger-line {
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: -8px;
+                background-color: var(--color-dark-blue-950);
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 8px;
+                background-color: var(--color-dark-blue-950);
+            }
+        }
+
+        &__btn-project {
+            @media screen and (min-width: 1024px) {
+                padding-block: calc(6.5px + 6.5 * ((100vw - 961px) / 961));
+                padding-inline: calc(12px + 12 * ((100vw - 961px) / 961));
+            }
+        }
+    }
+</style>

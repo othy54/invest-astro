@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195.492" height="130.182" viewBox="0 0 195.492 130.182">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.013" y1="0.201" x2="0.976" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#faebd3"/>
+      <stop offset="1" stop-color="#faebd3" stop-opacity="0.322"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.029" y1="0.048" x2="0.769" y2="0.929" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Groupe_165" data-name="Groupe 165" transform="translate(-388.508 -2628.979)">
+    <g id="Groupe_165-2" data-name="Groupe 165">
+      <path id="Tracé_244" data-name="Tracé 244" d="M-19973-18675.848l79.121-63.844,7.553,82.527Z" transform="translate(20361.508 21416.324)" fill="#ec6423"/>
+      <path id="Tracé_259" data-name="Tracé 259" d="M-19924.508-18684.324l30.629-55.367,7.553,82.527Z" transform="translate(20361.508 21416.324)" opacity="0.8" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+      <path id="Tracé_258" data-name="Tracé 258" d="M-19973-18675.848l79.121-63.844-30.629,55.367Z" transform="translate(20361.508 21416.324)" opacity="0.8" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    </g>
+    <path id="Tracé_245" data-name="Tracé 245" d="M-19882.363-18584.945l13.047-3.842v9.639Z" transform="translate(20453.316 21284.42)" fill="#f4792c"/>
+    <path id="Tracé_246" data-name="Tracé 246" d="M-20158.07-18636.781l-1.906,19.3-13.752-22.811Z" transform="translate(20568.215 21269.271)" fill="#ec6423"/>
+  </g>
+</svg>

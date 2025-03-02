@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="948" height="1110" viewBox="0 0 948 1110">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.434" y1="-0.347" x2="0.4" y2="1.522" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.043" y1="0.976" x2="1" y2="0.018" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.826" y1="0.92" x2="0.741" y2="0.532" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="reflections" transform="translate(0 50)" opacity="0.64">
+    <path id="Tracé_219" data-name="Tracé 219" d="M2449.545,1096.908l-824.57-43.494-23.553,26.37,873.346,45.124Z" transform="translate(-1601.422 -64.908)" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    <path id="Tracé_220" data-name="Tracé 220" d="M2549.422,255.134l-26.879-6.822-72.982,848.613,25.207,27.982Z" transform="translate(-1601.422 -64.908)" opacity="0.64" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    <path id="Tracé_221" data-name="Tracé 221" d="M2522.979,248.652,1601.422,14.908V1079.784l23.545-26.376,824.588,43.508Z" transform="translate(-1601.422 -64.908)" fill="url(#linear-gradient-3)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1607" height="335" viewBox="0 0 1607 335">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="clip-path-2" data-name="clip-path" width="1607" height="335" transform="translate(243.998 3937.27)" fill="#001e50"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#001231" stop-opacity="0"/>
+      <stop offset="1" stop-color="#001231"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="0.306" y1="0.177" x2="0.08" y2="0.578" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d3f5fa"/>
+      <stop offset="1" stop-color="#d3f5fa" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="reflection-left">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-color="#eefcfd" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.148" y1="0.991" x2="0.246" y2="0.653" xlink:href="#linear-gradient"/>
+    <filter id="reflection-right">
+      <feOffset dx="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-2"/>
+      <feFlood flood-color="#eefcfd" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="0.833" y1="0.257" x2="0.161" y2="0.846" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d3f5fa" stop-opacity="0.565"/>
+      <stop offset="1" stop-color="#d3f5fa" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Groupe_10" data-name="Groupe 10" transform="translate(-243.998 -3937.27)" clip-path="url(#clip-path)">
+    <rect id="shadow" width="1607" height="335" transform="translate(243.998 3937.27)" opacity="0.56" fill="url(#radial-gradient)"/>
+    <g id="reflections" transform="translate(134.676 3663.327)" opacity="0.08">
+      <g data-type="innerShadowGroup">
+        <path id="reflection-left-2" data-name="reflection-left" d="M677.052,921.733,645.484,1564.42l519.453-252.836Z" transform="translate(-645.483 -652.537)" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+        <g transform="matrix(1, 0, 0, 1, 109.32, 273.94)" filter="url(#reflection-left)" style="mix-blend-mode: hard-light;isolation: isolate">
+          <path id="reflection-left-3" data-name="reflection-left" d="M677.052,921.733,645.484,1564.42l519.453-252.836Z" transform="translate(-754.81 -926.48)" fill="#fff"/>
+        </g>
+      </g>
+      <g data-type="innerShadowGroup">
+        <path id="reflection-right-2" data-name="reflection-right" d="M2250.207,1450.5,1326.279,785.844,827.339,1444.89Z" transform="translate(-307.886 -785.843)" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+        <g transform="matrix(1, 0, 0, 1, 109.32, 273.94)" filter="url(#reflection-right)" style="mix-blend-mode: hard-light;isolation: isolate">
+          <path id="reflection-right-3" data-name="reflection-right" d="M2250.207,1450.5,1326.279,785.844,827.339,1444.89Z" transform="translate(-417.21 -1059.79)" fill="#fff"/>
+        </g>
+      </g>
+      <path id="reflection-top" d="M656.547,1055.042l986.792-269.2L1144.4,1444.89Z" transform="translate(-624.945 -785.843)" fill="url(#linear-gradient-3)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    </g>
+  </g>
+</svg>

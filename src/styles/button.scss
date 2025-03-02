@@ -1,0 +1,71 @@
+.button {
+    width: max-content;
+    border-radius: 60px;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: calc(3px + 3 * ((100vw - 961px) / 961));
+
+    &>.button-arrow {
+        height: 34px;
+    }
+
+    &__arrow {
+        width: calc(21px + 21 * ((100vw - 390px) / 704));
+
+        @media screen and (min-width: 1024px) {
+            width: calc(10.5px + 10.5 * ((100vw - 961px) / 961));
+        }
+    }
+}
+
+.button-default {
+    padding-block: calc(15px + 15 * ((100vw - 390px) / 704));
+    padding-inline: calc(32px + 32 * ((100vw - 390px) / 704));
+    font-size: calc(18px + 18 * ((100vw - 390px) / 704));
+
+    @media screen and (min-width: 1024px) {
+        padding-block: calc(7.5px + 7.5 * ((100vw - 961px) / 961));
+        padding-inline: calc(16px + 16 * ((100vw - 961px) / 961));
+        font-size: calc(9px + 9 * ((100vw - 961px) / 961));
+    }
+}
+
+.button-big {
+    padding-block: calc(9.5px + 9.5 * ((100vw - 390px) / 704));
+    padding-inline: calc(16px + 16 * ((100vw - 390px) / 704));
+    font-size: calc(18px + 18 * ((100vw - 390px) / 704));
+
+    @media screen and (min-width: 1024px) {
+        padding-block: calc(9.5px + 9.5 * ((100vw - 961px) / 961));
+        padding-inline: calc(16px + 16 * ((100vw - 961px) / 961));
+        font-size: calc(11px + 11 * ((100vw - 961px) / 961));
+    }
+}
+
+.button-link {
+    & span {
+        transition: transform var(--cubic) 0.5s;
+    }
+
+    &:hover {
+        & span {
+            transform: translateX(6px);
+        }
+    }
+}
+
+.button-submit {
+    background-color: var(--color-invest-500);
+    color: var(--color-dark-blue-950);
+    fill: var(--color-dark-blue-950);
+    position: relative;
+
+    &:hover {
+        background-color: var(--color-invest-400);
+    }
+}

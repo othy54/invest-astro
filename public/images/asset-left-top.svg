@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="157.73" height="173.822" viewBox="0 0 157.73 173.822">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.029" y1="0.048" x2="0.769" y2="0.929" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#faebd3"/>
+      <stop offset="1" stop-color="#faebd3" stop-opacity="0.322"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.013" y1="0.201" x2="0.976" y2="0" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Groupe_166" data-name="Groupe 166" transform="translate(-432 -2220.029)">
+    <path id="Tracé_248" data-name="Tracé 248" d="M-19883.863-18973.684l-133.73-49.645,76.863-100.178Z" transform="translate(20461.594 21355.535)" fill="#ec6423"/>
+    <path id="Tracé_254" data-name="Tracé 254" d="M-19965.059-19037.572l-52.535,14.244,76.863-100.178Z" transform="translate(20461.594 21355.535)" opacity="0.8" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+    <path id="Tracé_253" data-name="Tracé 253" d="M-19883.863-18987.646l-133.73-49.645,52.535-14.244Z" transform="translate(20461.594 21369.498)" opacity="0.8" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+  </g>
+</svg>
