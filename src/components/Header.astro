@@ -263,14 +263,14 @@ const socials = [
             transition: max-width 0.3s;
 
             @media screen and (min-width: 1024px) {
-                max-width: calc(75px + 75 * ((100vw - 961px) / 961));
+                max-width: 9.375rem;
             }
         }
 
         &.section-header--sticked {
             .section-header__logo {
                 @media screen and (min-width: 1024px) {
-                    max-width: calc(60px + 60 * ((100vw - 961px) / 961));
+                    max-width: 7.5rem;
                 }
             }
 
@@ -301,7 +301,7 @@ const socials = [
         &__items {
             font-size: 20px;
             line-height: 20px;
-            letter-spacing: calc(-16em / 1000);
+            letter-spacing: -0.016em;
             transition: clip-path var(--cubic) 0.7s;
             clip-path: inset(0 0 100% 0);
             overflow: clip;
@@ -312,15 +312,15 @@ const socials = [
             }
 
             @media screen and (min-width: 768px) {
-                font-size: calc(20px + 20 * ((100vw - 768px) / 265));
-                line-height: calc(20px + 20 * ((100vw - 768px) / 265));
+                font-size: 1.25rem;
+                line-height: 1.25rem;
             }
 
             @media screen and (min-width: 1024px) {
                 overflow: visible;
                 clip-path: unset;
-                font-size: calc(8px + 8 * ((100vw - 961px) / 961));
-                line-height: calc(9px + 9 * ((100vw - 961px) / 961));
+                font-size: 1rem;
+                line-height: 1.125rem;
 
                 & > li {
                     width: unset;
@@ -403,13 +403,13 @@ const socials = [
                 border-radius: 6px;
                 position: absolute;
                 left: 0;
-                padding: calc(10px + 10 * (100vw - 961px) / 961);
+                padding: 1.25rem;
                 width: max-content;
-                transform: translate(calc(-10px + -10 * (100vw - 961px) / 961));
+                transform: translate(-1.25rem);
                 min-height: unset;
 
                 & > li {
-                    font-size: calc(7px + 7 * (100vw - 961px) / 961);
+                    font-size: 0.875rem;
                 }
             }
         }
@@ -473,8 +473,8 @@ const socials = [
 
         &__btn-project {
             @media screen and (min-width: 1024px) {
-                padding-block: calc(6.5px + 6.5 * ((100vw - 961px) / 961));
-                padding-inline: calc(12px + 12 * ((100vw - 961px) / 961));
+                padding-block: 0.8125rem;
+                padding-inline: 1.5rem;
             }
         }
     }
