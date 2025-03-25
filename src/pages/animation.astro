@@ -167,15 +167,6 @@ import Borders from "@components/Borders.astro";
           });
         });
 
-        // // 🔥 Animation des sharps un par un
-        // for (const [i, sharp] of [...sharps].entries()) {
-        //   await animateElement(sharp, [{ opacity: 1 }], {
-        //     duration: 1000,
-        //     fill: "forwards",
-        //     delay: -600,
-        //   });
-        // }
-
         textLine.forEach(async (line) => {
           await animateElement(line, [{ translate: 0 }], {
             duration: 400,
