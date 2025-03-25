@@ -413,9 +413,8 @@ const homepageData = data.page.templateHomepage;
 						>
 							<div
 								class="section-accompaniement__text mt-10 lg:mt-0"
-							>
-								{homepageData.homepageAccompaniementDescription}
-							</div>
+								set:html={homepageData.homepageAccompaniementDescription}
+							/>
 
 							<Button
 								class="mt-10"
@@ -436,10 +435,10 @@ const homepageData = data.page.templateHomepage;
 
 	.section-hero {
 		&__title {
-			font-size: calc(33px + 33 * ((100vw - 390px) / 704));
-			line-height: calc(36px + 36 * ((100vw - 390px) / 704));
-			letter-spacing: calc(-24em / 1000);
-			max-width: calc(300px + 300 * ((100vw - 390px) / 704));
+			font-size: 2.0625rem;
+			line-height: 2.25rem;
+			letter-spacing: -0.024em;
+			max-width: 18.75rem;
 
 			@media screen and (min-width: 1024px) {
 				font-size: calc(32px + 32 * ((100vw - 961px) / 961));

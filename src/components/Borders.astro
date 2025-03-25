@@ -1,0 +1,60 @@
+---
+const { mask = "border-sharp-top" } = Astro.props;
+---
+
+<div class="borders">
+  <div
+    class="filter-border absolute w-full h-full left-0 top-0 backdrop-blur-xs"
+    style=`mask-image: url('images/${mask}.svg')`
+  >
+  </div>
+  <div
+    class="filter-border filter-border-bg mix-blend-hard-light absolute w-full h-full left-0 top-0 backdrop-blur-xs"
+    style=`mask-image: url('images/${mask}.svg')`
+  >
+  </div>
+</div>
+
+<style>
+  .filter-border {
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    animation: fade 1s forwards;
+  }
+
+  .filter-border-bg {
+    background: conic-gradient(
+      from var(--rotation),
+      #eefcfd7a 0,
+      #eefcfd9e 13.83%,
+      #eefcfd00 22.31%,
+      #eefcfda3 27.63%,
+      #eefcfd59 52.26%,
+      #eefcfd 58.66%,
+      #eefcfd38 68.51%,
+      #eefcfd 99.01%,
+      #eefcfd7a 100%
+    );
+  }
+
+  .borders {
+    &:hover {
+      & .filter-border-bg {
+        animation: rotate 4s linear infinite;
+      }
+    }
+  }
+
+  @property --rotation {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 148deg;
+  }
+
+  @keyframes rotate {
+    to {
+      --rotation: 360deg;
+    }
+  }
+</style>

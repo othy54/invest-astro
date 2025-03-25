@@ -1,0 +1,369 @@
+---
+import LayoutAnimation from "@layouts/LayoutAnimation.astro";
+import Logo from "@components/Logo.astro";
+import Borders from "@components/Borders.astro";
+---
+
+<LayoutAnimation>
+  <main>
+    <header
+      class="w-full flex justify-between px-12 py-6 fixed top-0 left-0 z-10"
+    >
+      <div>
+        <div class="w-[9.44rem]">
+          <Logo />
+        </div>
+        <div></div>
+      </div>
+      <div></div>
+    </header>
+    <section class="section-hero w-full h-[200vh] bg-dark-blue-950 relative">
+      <div class="h-screen relative">
+        <img
+          class="fixed w-full h-screen object-cover"
+          src="images/hero-bg.png"
+          alt=""
+        />
+        <div
+          class="sharp-top-wrapper sharps fixed top-[-24.13rem] left-[17.81rem]"
+          data-speed-parallax="15"
+        >
+          <div class="sharp-top relative h-[64.25rem] w-[45.63rem]">
+            <img
+              class="absolute w-full h-full object-cover shard-to-video"
+              src="images/video.png"
+              alt=""
+            />
+            <Borders />
+          </div>
+        </div>
+        <div
+          class="sharp-left-wrapper sharps absolute left-[-6.94rem] top-134"
+          data-speed-parallax="30"
+        >
+          <div class="sharp-left relative h-[38.44rem] w-113">
+            <img
+              class="absolute w-full h-full object-cover"
+              src="images/image-left.png"
+              alt=""
+            />
+            <Borders mask="border-sharp-left" />
+            <img
+              class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
+              src="images/reflection-left.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          class="sharp-bottom-wrapper sharps absolute left-125 top-187"
+          data-speed-parallax="20"
+        >
+          <div class="sharp-bottom relative h-105 w-161">
+            <img
+              class="absolute w-full h-full object-cover"
+              src="images/image-bottom.jpg"
+              alt=""
+            />
+            <Borders mask="border-sharp-bottom" />
+            <img
+              class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
+              src="images/reflection-bottom.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          class="sharp-right-wrapper sharps absolute -right-32 top-32"
+          data-speed-parallax="30"
+        >
+          <div class="sharp-right relative h-143 w-129">
+            <img
+              class="absolute w-full h-full object-cover"
+              src="images/image-right.jpg"
+              alt=""
+            />
+            <Borders mask="border-sharp-right" />
+            <img
+              class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
+              src="images/reflection-right.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="absolute left-1/2 top-1/2 -translate-y-1/2 z-10">
+          <div
+            class="text-[4rem] leading-[4.2rem] tracking-[-0.024em] section-hero__text"
+          >
+            <div class="section-hero__text-line font-semibold text-white">
+              <div>Découvrez</div>
+            </div>
+            <div class="section-hero__text-line font-semibold text-white">
+              <div>l'Eurométropole de Metz,</div>
+            </div>
+            <div class="section-hero__text-line text-cyan-300">
+              <div>territoire innovant</div>
+            </div>
+            <div class="section-hero__text-line text-cyan-300">
+              <div>& durable</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="h-screen relative z-10 bg-white"></section>
+  </main>
+  <div
+    class="cursor pointer-events-none fixed bg-cyan-400 border border-cyan-400/64 backdrop-blur-[0.5rem] w-[10px] aspect-square rounded-full z-1000 top-0 left-0 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center"
+  >
+    <div class="relative">
+      <div
+        class="text-cursor opacity-0 absolute text-white text-[0.94rem] uppercase font-semibold tracking-[-0.024em] leading-[1rem] w-max top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+      >
+        Voir <br /> le site
+      </div>
+    </div>
+  </div>
+</LayoutAnimation>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const strokeLine = document.querySelector("#stroke-line");
+    const logo = document.querySelector(".logo");
+    const logoWrapper = document.querySelector(".logo-wrapper");
+    const sharps = document.querySelectorAll(".sharps");
+    const textLine = document.querySelectorAll(
+      ".section-hero__text-line > div"
+    );
+
+    if (strokeLine) {
+      const animateElement = (
+        element: Element | null,
+        keyframes: Keyframe[],
+        options: object
+      ) => {
+        return element?.animate(keyframes, options).finished;
+      };
+
+      const runAnimations = async () => {
+        await animateElement(strokeLine, [{ "--stroke": 0 }], {
+          duration: 3000,
+          fill: "forwards",
+        });
+        await animateElement(logo, [{ opacity: 1 }], {
+          duration: 1000,
+          fill: "forwards",
+        });
+        await animateElement(
+          logoWrapper,
+          [{ left: 0, top: 0, transform: "translateY(0)", scale: 1 }],
+          { duration: 400, fill: "forwards" }
+        );
+
+        sharps.forEach(async (sharp, i) => {
+          await animateElement(sharp, [{ opacity: 1 }], {
+            duration: 500,
+            fill: "forwards",
+            delay: i * 200,
+          });
+        });
+
+        // // 🔥 Animation des sharps un par un
+        // for (const [i, sharp] of [...sharps].entries()) {
+        //   await animateElement(sharp, [{ opacity: 1 }], {
+        //     duration: 1000,
+        //     fill: "forwards",
+        //     delay: -600,
+        //   });
+        // }
+
+        textLine.forEach(async (line) => {
+          await animateElement(line, [{ translate: 0 }], {
+            duration: 400,
+            fill: "forwards",
+            delay: 800,
+          });
+        });
+      };
+
+      runAnimations();
+    }
+
+    const sharpTop = document.querySelector(".sharp-top");
+    const sectionHero = document.querySelector(".section-hero");
+    const sectionHeroWrapper = document.querySelector(".sharp-top-wrapper");
+
+    const animation = sharpTop?.animate(
+      [
+        {
+          clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)",
+          width: "100vw",
+          height: "100vh",
+        },
+      ],
+      {
+        duration: 2000,
+        fill: "forwards",
+      }
+    );
+
+    animation?.pause();
+
+    const animation2 = sectionHeroWrapper?.animate(
+      [{ left: 0, top: 0, transform: "translateY(0)" }],
+      {
+        duration: 2000,
+        fill: "forwards",
+      }
+    );
+
+    animation2?.pause();
+
+    const animation3 = document
+      .querySelector(".borders")
+      ?.animate([{ opacity: 0 }], {
+        duration: 2000,
+        fill: "forwards",
+      });
+
+    animation3?.pause();
+
+    const updateAnimation = () => {
+      const scrollProgress =
+        window.scrollY /
+        (document.body.scrollHeight - sectionHero.clientHeight);
+
+      const animations = [
+        { anim: animation, factor: 1 },
+        { anim: animation2, factor: 1 },
+        { anim: animation3, factor: 50 },
+      ];
+
+      animations.forEach(({ anim, factor }) => {
+        anim.currentTime =
+          anim.effect.getTiming().duration * (scrollProgress * factor);
+      });
+
+      requestAnimationFrame(updateAnimation);
+    };
+
+    requestAnimationFrame(updateAnimation);
+
+    const cursor = document.querySelector(".cursor");
+    const text = document.querySelector(".section-hero__text");
+
+    let mouseX = 0,
+      mouseY = 0;
+    let isMoving = false;
+
+    const updateCursor = () => {
+      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      isMoving = false;
+    };
+
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!isMoving) {
+        isMoving = true;
+        requestAnimationFrame(updateCursor);
+      }
+
+      const { innerWidth: w, innerHeight: h } = window;
+
+      // Normalisation des coordonnées (de -1 à 1)
+      const x = (e.clientX / w) * 2 - 1;
+      const y = (e.clientY / h) * 2 - 1;
+
+      // Appliquer le mouvement inverse
+
+      if (window.scrollY < 10) {
+        sharps.forEach((sharp) => {
+          const moveX = x * -Number(sharp.getAttribute("data-speed-parallax")); // Ajuste l'intensité du déplacement
+          const moveY = y * -Number(sharp.getAttribute("data-speed-parallax"));
+          sharp.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+
+        text.style.transform = `translate(${x * -40}px, ${y * -40}px)`;
+      }
+    });
+  });
+</script>
+<style is:inline>
+  #stroke-line {
+    stroke-dasharray: 256;
+    stroke-dashoffset: var(--stroke);
+  }
+
+  @property --stroke {
+    syntax: "<integer>";
+    inherits: false;
+    initial-value: 256;
+  }
+
+  .logo {
+    opacity: 0;
+  }
+
+  .logo-wrapper {
+    position: relative;
+    left: calc((100vw - 9.4375rem) / 2 - 3rem);
+    top: 50vh;
+    transform: translateY(-50%);
+    scale: 1.6;
+  }
+
+  /* .logo-wrapper--animated {
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+  } */
+
+  .sharp-top {
+    clip-path: polygon(0% 47.86%, 18.607% 100%, 80.394% 92.986%, 100% 0%);
+  }
+
+  .sharp-left {
+    clip-path: polygon(4.721% 100%, 100% 73.027%, 89.499% 15.005%, -0% -0%);
+  }
+
+  .sharp-bottom {
+    clip-path: polygon(4.627% 24.153%, 0% 100%, 100% 83.116%, 58.867% 0%);
+  }
+
+  .sharp-right {
+    clip-path: polygon(92.01% 0%, 0% 28.409%, 29.851% 100%, 100% 89.353%);
+  }
+
+  .sharps {
+    opacity: 0;
+  }
+
+  .cursor {
+    transition:
+      transform 0.1s linear,
+      width 0.3s;
+
+    & .text-cursor {
+      transition: opacity 0.2s;
+    }
+  }
+
+  body:has(.sharps:hover:not(:first-of-type)) {
+    & .cursor {
+      width: 5rem;
+
+      & .text-cursor {
+        opacity: 1;
+      }
+    }
+  }
+
+  .section-hero__text-line {
+    overflow: clip;
+
+    & > div {
+      translate: 0 100%;
+    }
+  }
+</style>

@@ -261,25 +261,6 @@ const socials = [
 
         &__logo {
             transition: max-width 0.3s;
-
-            @media screen and (min-width: 1024px) {
-                max-width: 9.375rem;
-            }
-        }
-
-        &.section-header--sticked {
-            .section-header__logo {
-                @media screen and (min-width: 1024px) {
-                    max-width: 7.5rem;
-                }
-            }
-
-            .menu {
-                &::before {
-                    content: "";
-                    height: 0%;
-                }
-            }
         }
 
         &.section-header--sticked {
@@ -287,8 +268,19 @@ const socials = [
             box-shadow: 0 1px 2px #00000016;
             margin-top: -46px;
 
+            & .section-header__logo {
+                @media screen and (min-width: 1024px) {
+                    max-width: 7.5rem;
+                }
+            }
+
             & .menu {
                 padding-block: 16px;
+
+                &::before {
+                    content: "";
+                    height: 0%;
+                }
             }
         }
 
@@ -386,7 +378,7 @@ const socials = [
 
             & > li {
                 font-size: 18px;
-                letter-spacing: calc(-16em / 1000);
+                letter-spacing: -0.016em;
                 font-weight: 400;
 
                 &:not(:last-child) {
