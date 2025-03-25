@@ -5,12 +5,12 @@ const { mask = "border-sharp-top" } = Astro.props;
 <div class="borders">
   <div
     class="filter-border absolute w-full h-full left-0 top-0 backdrop-blur-xs"
-    style=`mask-image: url('images/${mask}.svg')`
+    style=`mask-image: url('/images/${mask}.svg')`
   >
   </div>
   <div
     class="filter-border filter-border-bg mix-blend-hard-light absolute w-full h-full left-0 top-0 backdrop-blur-xs"
-    style=`mask-image: url('images/${mask}.svg')`
+    style=`mask-image: url('/images/${mask}.svg')`
   >
   </div>
 </div>
