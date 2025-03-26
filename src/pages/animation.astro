@@ -17,7 +17,9 @@ import Borders from "@components/Borders.astro";
       </div>
       <div></div>
     </header>
-    <section class="section-hero w-full h-[200vh] bg-dark-blue-950 relative">
+    <section
+      class="section-hero w-full h-[250vh] bg-dark-blue-950 relative overflow-clip"
+    >
       <div class="h-screen relative">
         <img
           class="fixed w-full h-screen object-cover"
@@ -25,7 +27,7 @@ import Borders from "@components/Borders.astro";
           alt=""
         />
         <div
-          class="sharp-top-wrapper sharps fixed top-[-24.13rem] left-[17.81rem]"
+          class="sharp-top-container sharps fixed top-[-28.13rem] left-[19rem]"
           data-speed-parallax="15"
         >
           <div class="sharp-top relative h-[64.25rem] w-[45.63rem]">
@@ -38,60 +40,119 @@ import Borders from "@components/Borders.astro";
           </div>
         </div>
         <div
-          class="sharp-left-wrapper sharps absolute left-[-6.94rem] top-134"
+          class="sharp-left-container sharps absolute left-[-5.94rem] -bottom-19"
           data-speed-parallax="30"
         >
-          <div class="sharp-left relative h-[38.44rem] w-113">
-            <img
-              class="absolute w-full h-full object-cover"
-              src="/images/image-left.png"
-              alt=""
-            />
-            <Borders mask="border-sharp-left" />
-            <img
-              class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
-              src="/images/reflection-left.svg"
-              alt=""
-            />
+          <div class="sharp-left-wrapper">
+            <div class="sharp-left relative h-[38.44rem] w-113">
+              <img
+                class="sharp-image absolute w-full h-full object-cover"
+                src="/images/image-left.png"
+                alt=""
+              />
+              <Borders mask="border-sharp-left" />
+              <img
+                class="sharp-reflection absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
+                src="/images/reflection-left.svg"
+                alt=""
+              />
+            </div>
+            <div class="title-sharp-wrapper absolute left-1/2 top-0">
+              <div class="title-sharp-container">
+                <img
+                  class="title-sharp-image"
+                  src="/images/fragment-pink.svg"
+                  alt=""
+                />
+                <div>
+                  <div class="title-sharp-title">
+                    <span>Organiser</span>
+                  </div>
+                  <div class="title-sharp-text">
+                    Des évènements professionnels
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div
-          class="sharp-bottom-wrapper sharps absolute left-125 top-187"
+          class="sharp-bottom-container sharps absolute right-192 -bottom-32"
           data-speed-parallax="20"
         >
-          <div class="sharp-bottom relative h-105 w-161">
-            <img
-              class="absolute w-full h-full object-cover"
-              src="/images/image-bottom.jpg"
-              alt=""
-            />
-            <Borders mask="border-sharp-bottom" />
-            <img
-              class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
-              src="/images/reflection-bottom.svg"
-              alt=""
-            />
+          <div class="sharp-bottom-wrapper">
+            <div class="sharp-bottom relative h-105 w-161">
+              <img
+                class="sharp-image absolute w-full h-full object-cover"
+                src="/images/image-bottom.jpg"
+                alt=""
+              />
+              <Borders mask="border-sharp-bottom" />
+              <img
+                class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
+                src="/images/reflection-bottom.svg"
+                alt=""
+              />
+            </div>
+            <div class="title-sharp-wrapper absolute left-[10%] top-0">
+              <div class="title-sharp-container">
+                <img
+                  class="title-sharp-image"
+                  src="/images/fragment-orange.svg"
+                  alt=""
+                />
+                <div>
+                  <div class="title-sharp-title">
+                    <span>Investir</span>
+                  </div>
+                  <div class="title-sharp-text">
+                    Dans les richesses du patrimoine
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div
-          class="sharp-right-wrapper sharps absolute -right-32 top-32"
+          class="sharp-right-container sharps absolute -right-32 top-32"
           data-speed-parallax="30"
         >
-          <div class="sharp-right relative h-143 w-129">
-            <img
-              class="absolute w-full h-full object-cover"
-              src="/images/image-right.jpg"
-              alt=""
-            />
-            <Borders mask="border-sharp-right" />
-            <img
-              class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
-              src="/images/reflection-right.svg"
-              alt=""
-            />
+          <div class="sharp-right-wrapper">
+            <div class="sharp-right relative h-143 w-129">
+              <img
+                class="sharp-image absolute w-full h-full object-cover"
+                src="/images/image-right.jpg"
+                alt=""
+              />
+              <Borders mask="border-sharp-right" />
+              <img
+                class="absolute w-full h-full mix-blend-hard-light opacity-64 pointer-events-none"
+                src="/images/reflection-right.svg"
+                alt=""
+              />
+            </div>
+            <div class="title-sharp-wrapper absolute top-0">
+              <div class="title-sharp-container">
+                <img
+                  class="title-sharp-image"
+                  src="/images/fragment-green.svg"
+                  alt=""
+                />
+                <div>
+                  <div class="title-sharp-title">
+                    <span>Visiter</span>
+                  </div>
+                  <div class="title-sharp-text">
+                    Une destination éco&#8209touristique
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="absolute left-1/2 top-1/2 -translate-y-1/2 z-10">
+        <div
+          class="absolute left-1/2 top-1/2 -translate-y-1/2 z-10 pointer-events-none"
+        >
           <div
             class="text-[4rem] leading-[4.2rem] tracking-[-0.024em] section-hero__text"
           >
@@ -106,6 +167,103 @@ import Borders from "@components/Borders.astro";
             </div>
             <div class="section-hero__text-line text-cyan-300">
               <div>& durable</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute top-8 left-39 max-w-161 sharp-description opacity-0 pointer-events-none z-90"
+        >
+          <div class="relative hidden sharp-description-wrapper">
+            <div class="flex justify-between">
+              <div class="btn-back">Retour</div>
+              <div>Accéder au site</div>
+            </div>
+            <div>
+              <div>Organiser</div>
+              <div>Une destination éco-touristique</div>
+              <p>
+                Le Pôle Tourisme de l'agence Inspire Metz vous accueille pour
+                vous faire découvrir l’Eurométropole de Metz, une destination
+                créative et durable au cœur de l’Europe. Besoin d’informations
+                précises, de conseils avisés ou d’inspirations pour un séjour
+                inoubliable ? Notre équipe multilingue est à votre disposition 7
+                jours sur 7 !
+              </p>
+              <p>
+                Metz, idéalement située à 85 minutes de Paris, 1h du Luxembourg
+                et de l’Allemagne, ville-jardin et ville d’eau aux 3000 ans
+                d’histoire, se dévoile aussi depuis ses rivières pour une
+                découverte douce et originale. Nous vous guidons vers les
+                meilleures expériences : circuits thématiques, visites guidées,
+                rencontres avec des artisans, dégustations de produits locaux et
+                événements incontournables. En venant nous voir, vous profitez
+                d’un accueil personnalisé, d’un large choix de documentation, de
+                bons plans exclusifs et d’une boutique mettant en avant le
+                savoir-faire local. Venez vivre Metz autrement et laissez-vous
+                surprendre !
+              </p>
+            </div>
+          </div>
+          <div class="relative hidden sharp-description-wrapper">
+            <div class="flex justify-between">
+              <div class="btn-back">Retour</div>
+              <div>Accéder au site</div>
+            </div>
+            <div>
+              <div>Investir</div>
+              <div>Une destination éco-touristique</div>
+              <p>
+                Le Pôle Tourisme de l'agence Inspire Metz vous accueille pour
+                vous faire découvrir l’Eurométropole de Metz, une destination
+                créative et durable au cœur de l’Europe. Besoin d’informations
+                précises, de conseils avisés ou d’inspirations pour un séjour
+                inoubliable ? Notre équipe multilingue est à votre disposition 7
+                jours sur 7 !
+              </p>
+              <p>
+                Metz, idéalement située à 85 minutes de Paris, 1h du Luxembourg
+                et de l’Allemagne, ville-jardin et ville d’eau aux 3000 ans
+                d’histoire, se dévoile aussi depuis ses rivières pour une
+                découverte douce et originale. Nous vous guidons vers les
+                meilleures expériences : circuits thématiques, visites guidées,
+                rencontres avec des artisans, dégustations de produits locaux et
+                événements incontournables. En venant nous voir, vous profitez
+                d’un accueil personnalisé, d’un large choix de documentation, de
+                bons plans exclusifs et d’une boutique mettant en avant le
+                savoir-faire local. Venez vivre Metz autrement et laissez-vous
+                surprendre !
+              </p>
+            </div>
+          </div>
+          <div class="relative hidden sharp-description-wrapper">
+            <div class="flex justify-between">
+              <div class="btn-back">Retour</div>
+              <div>Accéder au site</div>
+            </div>
+            <div>
+              <div>Visiter</div>
+              <div>Une destination éco-touristique</div>
+              <p>
+                Le Pôle Tourisme de l'agence Inspire Metz vous accueille pour
+                vous faire découvrir l’Eurométropole de Metz, une destination
+                créative et durable au cœur de l’Europe. Besoin d’informations
+                précises, de conseils avisés ou d’inspirations pour un séjour
+                inoubliable ? Notre équipe multilingue est à votre disposition 7
+                jours sur 7 !
+              </p>
+              <p>
+                Metz, idéalement située à 85 minutes de Paris, 1h du Luxembourg
+                et de l’Allemagne, ville-jardin et ville d’eau aux 3000 ans
+                d’histoire, se dévoile aussi depuis ses rivières pour une
+                découverte douce et originale. Nous vous guidons vers les
+                meilleures expériences : circuits thématiques, visites guidées,
+                rencontres avec des artisans, dégustations de produits locaux et
+                événements incontournables. En venant nous voir, vous profitez
+                d’un accueil personnalisé, d’un large choix de documentation, de
+                bons plans exclusifs et d’une boutique mettant en avant le
+                savoir-faire local. Venez vivre Metz autrement et laissez-vous
+                surprendre !
+              </p>
             </div>
           </div>
         </div>
@@ -127,124 +285,114 @@ import Borders from "@components/Borders.astro";
 </LayoutAnimation>
 <script>
   window.addEventListener("DOMContentLoaded", () => {
-    const strokeLine = document.querySelector("#stroke-line");
-    const logo = document.querySelector(".logo");
-    const logoWrapper = document.querySelector(".logo-wrapper");
-    const sharps = document.querySelectorAll(".sharps");
-    const textLine = document.querySelectorAll(
-      ".section-hero__text-line > div"
-    );
+    const get = (selector: string) => document.querySelector(selector);
+    const getAll = (selector: string) => document.querySelectorAll(selector);
 
-    if (strokeLine) {
-      const animateElement = (
-        element: Element | null,
-        keyframes: Keyframe[],
-        options: object
-      ) => {
-        return element?.animate(keyframes, options).finished;
-      };
+    const strokeLine = get("#stroke-line");
+    const logo = get(".logo");
+    const logoWrapper = get(".logo-wrapper");
+    const sharps = getAll(".sharps");
+    const textLines = getAll(".section-hero__text-line > div");
+    const sharpTop = get(".sharp-top");
+    const sectionHero = get(".section-hero");
+    const sectionHeroWrapper = get(".sharp-top-container");
+    const borders = get(".borders");
+    const cursor = get(".cursor");
+    const text = get(".section-hero__text");
+    let isShapeActive = false;
+    const btnBackSharp = getAll(".btn-back");
+    const header = document.querySelector("header");
+    const sharpDescription = document.querySelector(".sharp-description");
 
-      const runAnimations = async () => {
-        await animateElement(strokeLine, [{ "--stroke": 0 }], {
-          duration: 3000,
-          fill: "forwards",
-        });
-        await animateElement(logo, [{ opacity: 1 }], {
-          duration: 1000,
-          fill: "forwards",
-        });
-        await animateElement(
-          logoWrapper,
-          [{ left: 0, top: 0, transform: "translateY(0)", scale: 1 }],
-          { duration: 400, fill: "forwards" }
-        );
+    // Fonction générique d'animation
+    const animateElement = (element, keyframes, options) =>
+      element?.animate(keyframes, options).finished;
 
-        sharps.forEach(async (sharp, i) => {
-          await animateElement(sharp, [{ opacity: 1 }], {
-            duration: 500,
-            fill: "forwards",
-            delay: i * 200,
-          });
-        });
+    // Lancement des animations d'entrée
+    const runAnimations = async () => {
+      if (!strokeLine) return;
 
-        textLine.forEach(async (line) => {
-          await animateElement(line, [{ translate: 0 }], {
-            duration: 400,
-            fill: "forwards",
-            delay: 800,
-          });
-        });
-      };
-
-      runAnimations();
-    }
-
-    const sharpTop = document.querySelector(".sharp-top");
-    const sectionHero = document.querySelector(".section-hero");
-    const sectionHeroWrapper = document.querySelector(".sharp-top-wrapper");
-
-    const animation = sharpTop?.animate(
-      [
-        {
-          clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)",
-          width: "100vw",
-          height: "100vh",
-        },
-      ],
-      {
-        duration: 2000,
-        fill: "forwards",
-      }
-    );
-
-    animation?.pause();
-
-    const animation2 = sectionHeroWrapper?.animate(
-      [{ left: 0, top: 0, transform: "translateY(0)" }],
-      {
-        duration: 2000,
-        fill: "forwards",
-      }
-    );
-
-    animation2?.pause();
-
-    const animation3 = document
-      .querySelector(".borders")
-      ?.animate([{ opacity: 0 }], {
-        duration: 2000,
-        fill: "forwards",
+      await animateElement(strokeLine, [{ "--stroke": 0 }], {
+        duration: 1000,
+        fill: "both",
       });
+      await animateElement(logo, [{ opacity: 1 }], {
+        duration: 1000,
+        fill: "both",
+      });
+      await animateElement(
+        logoWrapper,
+        [{ left: 0, top: 0, transform: "translateY(0)", scale: 1 }],
+        { duration: 400, fill: "both" }
+      );
 
-    animation3?.pause();
+      await Promise.all(
+        [...sharps].map((sharp, i) =>
+          animateElement(sharp, [{ opacity: 1 }], {
+            duration: 500,
+            fill: "both",
+            delay: i * 200,
+          })
+        )
+      );
+
+      await Promise.all(
+        [...textLines].map((line) =>
+          animateElement(line, [{ translate: 0 }], {
+            duration: 400,
+            fill: "both",
+          })
+        )
+      );
+    };
+
+    runAnimations();
+
+    // Animations au scroll
+    const animations = [
+      {
+        el: sharpTop,
+        keyframes: [
+          {
+            clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)",
+            width: "100vw",
+            height: "100vh",
+          },
+        ],
+        duration: 2000,
+      },
+      {
+        el: sectionHeroWrapper,
+        keyframes: [{ left: 0, top: 0, transform: "translateY(0)" }],
+        duration: 2000,
+      },
+      { el: borders, keyframes: [{ opacity: 0 }], duration: 600 },
+    ].map(({ el, keyframes, duration }) =>
+      el?.animate(keyframes, { duration, fill: "both" })
+    );
+
+    animations.forEach((anim) => anim?.pause());
 
     const updateAnimation = () => {
       const scrollProgress =
         window.scrollY /
         (document.body.scrollHeight - sectionHero.clientHeight);
-
-      const animations = [
-        { anim: animation, factor: 1 },
-        { anim: animation2, factor: 1 },
-        { anim: animation3, factor: 50 },
-      ];
-
-      animations.forEach(({ anim, factor }) => {
-        anim.currentTime =
-          anim.effect.getTiming().duration * (scrollProgress * factor);
-      });
-
+      animations.forEach(
+        (anim, i) =>
+          anim &&
+          (anim.currentTime =
+            anim.effect.getTiming().duration *
+            (i === 2 ? scrollProgress * 50 : scrollProgress))
+      );
       requestAnimationFrame(updateAnimation);
     };
 
     requestAnimationFrame(updateAnimation);
 
-    const cursor = document.querySelector(".cursor");
-    const text = document.querySelector(".section-hero__text");
-
+    // Gestion du curseur et effet parallax
     let mouseX = 0,
-      mouseY = 0;
-    let isMoving = false;
+      mouseY = 0,
+      isMoving = false;
 
     const updateCursor = () => {
       cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
@@ -254,29 +402,152 @@ import Borders from "@components/Borders.astro";
     window.addEventListener("mousemove", (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-
       if (!isMoving) {
         isMoving = true;
         requestAnimationFrame(updateCursor);
       }
 
-      const { innerWidth: w, innerHeight: h } = window;
+      if (window.scrollY < 10 && !isShapeActive) {
+        const { innerWidth: w, innerHeight: h } = window;
+        const x = (e.clientX / w) * 2 - 1;
+        const y = (e.clientY / h) * 2 - 1;
 
-      // Normalisation des coordonnées (de -1 à 1)
-      const x = (e.clientX / w) * 2 - 1;
-      const y = (e.clientY / h) * 2 - 1;
-
-      // Appliquer le mouvement inverse
-
-      if (window.scrollY < 10) {
         sharps.forEach((sharp) => {
-          const moveX = x * -Number(sharp.getAttribute("data-speed-parallax")); // Ajuste l'intensité du déplacement
-          const moveY = y * -Number(sharp.getAttribute("data-speed-parallax"));
-          sharp.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          const speed = Number(sharp.getAttribute("data-speed-parallax")) || 0;
+          sharp.style.transform = `translate(${x * -speed}px, ${y * -speed}px)`;
         });
 
         text.style.transform = `translate(${x * -40}px, ${y * -40}px)`;
       }
+    });
+
+    let animationGrowSharp;
+    let animationText;
+    let sharpActive;
+
+    // Gestion du clic sur les éléments .sharps
+    getAll(".sharps:not(:first-of-type)").forEach((sharp, i) => {
+      sharp.addEventListener("click", () => {
+        sharpDescription
+          ?.querySelectorAll(".sharp-description-wrapper")
+          [i].classList.remove("hidden");
+
+        if (i === 0) {
+          sharpDescription.style.left = "unset";
+          sharpDescription.style.right = "9.75rem";
+        } else {
+          sharpDescription.style.right = "unset";
+          sharpDescription.style.left = "9.75rem";
+        }
+
+        sharpActive = sharp;
+        Object.assign(document.body.style, {
+          height: "100vh",
+          overflow: "clip",
+        });
+
+        animateElement(header, [{ opacity: 0 }], {
+          duration: 200,
+          fill: "both",
+        });
+
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+        isShapeActive = true;
+        sharp.classList.add("sharp--active");
+
+        [...sharps].forEach((sh) => {
+          if (sh !== sharp)
+            animateElement(sh, [{ opacity: 0 }], {
+              duration: 500,
+              fill: "both",
+            });
+        });
+
+        animateElement(
+          sharp,
+          [
+            i === 0
+              ? { scale: 3, left: 0 }
+              : i === 1
+                ? { scale: 3.5, right: "-35rem", bottom: "10rem" }
+                : { scale: 2.5, right: "-10rem" },
+          ],
+          {
+            duration: 500,
+            fill: "both",
+          }
+        );
+
+        animationGrowSharp = sharp.animate(
+          [
+            i === 0
+              ? { scale: 3, left: 0 }
+              : i === 1
+                ? { scale: 3.5, right: "-35rem", bottom: "10rem" }
+                : { scale: 2.5, right: "-10rem" },
+          ],
+          {
+            duration: 500,
+            fill: "both",
+          }
+        );
+        animationText = text?.animate([{ opacity: 0 }], {
+          duration: 800,
+          fill: "both",
+        });
+
+        animateElement(sharpDescription, [{ opacity: 1 }], {
+          duration: 800,
+          fill: "both",
+        });
+      });
+    });
+
+    btnBackSharp.forEach((btn, i) => {
+      btn?.addEventListener("click", async () => {
+        Object.assign(document.body.style, {
+          height: "unset",
+          overflow: "unset",
+        });
+
+        animateElement(header, [{ opacity: 1 }], {
+          duration: 600,
+          fill: "both",
+        });
+
+        isShapeActive = false;
+        sharpActive.classList.remove("sharp--active");
+
+        await animationGrowSharp.reverse();
+
+        sharpDescription
+          ?.animate([{ opacity: 0 }], {
+            duration: 500,
+            fill: "both",
+          })
+          .finished.then(() => {
+            sharpDescription
+              ?.querySelectorAll(".sharp-description-wrapper")
+              [i].classList.add("hidden");
+          });
+
+        animateElement(text, [{ opacity: 1 }], {
+          duration: 900,
+          fill: "forwards",
+          delay: 500,
+        });
+
+        await Promise.all(
+          [...sharps].map((sharp) =>
+            animateElement(sharp, [{ opacity: 1 }], {
+              duration: 900,
+              fill: "both",
+              delay: 500,
+            })
+          )
+        );
+      });
     });
   });
 </script>
@@ -340,6 +611,60 @@ import Borders from "@components/Borders.astro";
     }
   }
 
+  .section-hero__text-line {
+    overflow: clip;
+    pointer-events: none;
+
+    & > div {
+      translate: 0 100%;
+    }
+  }
+
+  .title-sharp-wrapper {
+    & .title-sharp-image {
+      flex-shrink: 0;
+      transition: opacity 0.7s;
+      opacity: 0;
+      margin-top: 1rem;
+    }
+    & .title-sharp-container {
+      display: flex;
+      align-items: start;
+      column-gap: 0.875rem;
+      position: relative;
+    }
+    & .title-sharp-title {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      letter-spacing: -0.016em;
+      font-weight: 500;
+      color: white;
+      overflow: clip;
+
+      & > span {
+        display: inline-block;
+        transform: translateY(100%);
+        transition: transform 0.7s;
+        padding-block: 2px;
+      }
+    }
+
+    & .title-sharp-text {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      letter-spacing: -0.016em;
+      color: white;
+      margin-top: 0.75rem;
+      opacity: 0;
+      transition: opacity 0.7s;
+      max-width: 12.75rem;
+    }
+  }
+
+  .sharp-image {
+    transition: filter 0.4s;
+  }
+
   body:has(.sharps:hover:not(:first-of-type)) {
     & .cursor {
       width: 5rem;
@@ -350,11 +675,44 @@ import Borders from "@components/Borders.astro";
     }
   }
 
-  .section-hero__text-line {
-    overflow: clip;
+  .sharps:hover {
+    & .title-sharp-image {
+      opacity: 1;
+    }
 
-    & > div {
-      translate: 0 100%;
+    & .title-sharp-title {
+      & > span {
+        transform: translateY(0);
+      }
+    }
+
+    & .title-sharp-text {
+      opacity: 1;
+    }
+
+    & .sharp-image {
+      filter: brightness(0.5);
+    }
+  }
+
+  .sharp--active {
+    & .title-sharp-wrapper {
+      display: none;
+    }
+  }
+
+  .sharp-description {
+    transition: opacity 1s;
+  }
+
+  body:has(.sharp--active) {
+    & .sharps {
+      pointer-events: none;
+    }
+
+    & .sharp-description {
+      /* opacity: 1; */
+      pointer-events: auto;
     }
   }
 </style>

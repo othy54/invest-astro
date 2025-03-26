@@ -15,7 +15,7 @@ const { mask = "border-sharp-top" } = Astro.props;
   </div>
 </div>
 
-<style>
+<style is:inline>
   .filter-border {
     mask-position: center;
     mask-repeat: no-repeat;
@@ -38,7 +38,7 @@ const { mask = "border-sharp-top" } = Astro.props;
     );
   }
 
-  .borders {
+  .sharps:not(:first-of-type) {
     &:hover {
       & .filter-border-bg {
         animation: rotate 4s linear infinite;
